@@ -40,5 +40,6 @@ $result=mysqli_query($conn,$sql);
         ?>
        </tbody> 
     </table>
+    <a href="index.php">Adicionar</a>
 </body>
 </html>

@@ -6,7 +6,7 @@ $password=""; //contrasena en este caso es vacio
 $port=3307; // puerto 
 // linea para conectarnos a una base de datos
 //usando libreria mysqli
-$conn= new mysqli($servername,
+$conn= mysqli_connect($servername,
                     $username,
                     $password,
                     $database,

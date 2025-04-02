@@ -1,26 +1,40 @@
 <?php
 //var_dump($_POST);\
+include_once "conexion.php";
+$nombre = "";
+$telefono = '';
+$password = '';
+$permiso = 0;
+$email = '';
 if (!empty($_POST)) {
     if (empty($_POST["name"])) {
         echo "<script>alert('Nombre es obligatorio')</script><br>";
-        //header('Location:index.php');
+    } else {
+        $nombre = $_POST["name"];
+    }
+    if (empty($_POST["email"])) {
+        echo "Email es obligatorio<br>";
     } else
-        echo "Gracias por registrarte: " . $_POST["name"] . " " . $_POST["lastname"] . "<br>";
-    if (empty($_POST["ci"])) {
-        echo "<script>alert('Ci es obligatorio')</script>";
-        //header('Location:index.php');
+        $email = $_POST["email"];
+    if (empty($_POST["telefono"])) {
+        echo "Telefono es obligatorio<br>";
     } else
-        echo "Tu CI es: " . $_POST["ci"];
-    if (empty($_POST["gener"])) {
-        echo "Genero es obligatorio<br>";
-        //header('Location:index.php');
+        $telefono = $_POST["telefono"];
+    if (empty($_POST["password"])) {
+        echo "password es obligatorio<br>";
     } else
-        echo "<br>Tu Genero es: " . $_POST["gener"];
-    if (empty($_POST["fecnac"])) {
-        echo "Fec. Nacimiento es obligatorio<br>";
-        //header('Location:index.php');
+        $password = $_POST["password"];
+    if (empty($_POST["permiso"])) {
+        echo "permiso es obligatorio<br>";
     } else
-        echo "<br>Tu Fecha es: " . $_POST["fecnac"];
+        $permiso = $_POST["permiso"];
+    //codigo para adiconar a la base de datos
+    $sql = "INSERT INTO USUARIO(NOMBRE,EMAIL,PASSWORD,TELEFONO,IDPERMISO)";
+    $sql = $sql . " VALUES('$nombre','$email','$password','$telefono',$permiso)";
+    //echo $sql;
+    $queryResult=mysqli_query($conn,$sql);
+    header('Location:reporteusuario.php');
 } else {
     echo "Error al recibir datos";
 }
+ //header('Location:index.php');
