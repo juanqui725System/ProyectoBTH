@@ -1,0 +1,4 @@
+
+para vincular con el repositorio
+
+git remote add origin https://github.com
