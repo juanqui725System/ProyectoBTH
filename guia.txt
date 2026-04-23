@@ -1,4 +1,23 @@
 
 para vincular con el repositorio
 
-git remote add origin https://github.com
+git remote add origin https://github.com/juanqui725System/ProyectoBTH.git
+
+Subir los archivos
+
+git branch -M main
+git push -u origin main
+
+Sincroniza los cambios remotos
+
+git pull origin main --allow-unrelated-histories
+
+Ai pide unmensage solo guardar y salir
+"Merge", solo guarda y cierra (en Nano es Ctrl+O, Enter, Ctrl+X).
+
+#
+git push origin main
+o
+git push origin main --force
+
+
