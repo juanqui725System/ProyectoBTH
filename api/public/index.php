@@ -13,6 +13,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 // 2. Importar archivos (Si no usas Composer Autoload)
 require_once "../src/Router.php";
 require_once "../src/Controllers/UserController.php";
+require_once __DIR__ . '/../src/Controllers/RolController.php';
+
+/**
+ * Cuando quiero adicion el requiere puedo utilizar esto carga automatica
+ */
+
+// spl_autoload_register(function ($class) {
+//     // Busca en Controllers
+//     $file = __DIR__ . '/../src/Controllers/' . $class . '.php';
+//     if (file_exists($file)) { require_once $file; }
+
+//     // Busca en Models
+//     $file = __DIR__ . '/../src/Models/' . $class . '.php';
+//     if (file_exists($file)) { require_once $file; }
+// });
+
+/**
+ * Fin de carga automatica
+ */
+
 
 use App\Router;
 
@@ -22,7 +42,8 @@ $router = new Router();
 // Definimos los endpoints
 $router->add('GET', '/users', 'UserController@getAll');
 $router->add('GET', '/users/{id}', 'UserController@getById');
-$router->add('POST', '/users', 'UserController@create');
+$router->add('POST', '/users', 'UserController@store');
+$router->add('GET', '/rol', 'RolController@getAll');
 
 // 4. Iniciar la aplicación
 $router->run();

@@ -1,0 +1,5 @@
+curl -X GET http://pruebaapi2026.com/rol
+
+curl -X POST http://pruebaapi2026.com/rol 
+-H "Content-Type: application/json" 
+-d "{\"nombre\":\"Juan\",\"email\":\"j@mail.com\",\"password\":\"123\",\"rol_id\":1}"

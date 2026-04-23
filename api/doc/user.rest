@@ -1,0 +1,23 @@
+### adicionar usuario
+curl -X POST http://pruebaapi2026.com/users `
+-H "Content-Type: application/json" `
+-d '{"nombre":"Juan","email":"j@mail.com","password":"123","rol_id":1}'
+### Adicionar usuario con REST Client
+
+POST POST http://pruebaapi2026.com/users
+Content-Type: application/json
+{
+    "nombre": "Juan",
+    "email": "j@mail.com",
+    "password": "123",
+    "rol_id": 1
+}
+
+### Consulta de usuario
+
+curl -X GET http://pruebaapi2026.com/users
+
+### otra forma de consulta
+
+GET http://pruebaapi2026.com/users
+
