@@ -1,29 +1,34 @@
 # backendSexto2026
-# inicializar La coneccion con el proyecto al git
-git init
-Paso para subir un proyecto existente en mi PC
-1.	Inicializar git
-PS C:\wamp64\www\ProyectoSexto2025> git init
+### 1. inicializar La coneccion con el proyecto al git
+```bash
+   git init
+```
+### 2.	Agregar los archivos al area de preparación
 
-2.	Agregar los archivos al area de preparación
-PS C:\wamp64\www\ProyectoSexto2025> git add .
+```bash
+   git add .
+```
+### 3.	Hacer primer commit
+```bash
+   git commit -m "Mi primer commit"
+```
+### 4.	Asegurar que la rama principal se llame main
 
-3.	Hacer primer commit
-PS C:\wamp64\www\ProyectoSexto2025> git commit -m "Mi primer commit"
+```bash
+   git branch -M main
+```
+### 5.	Conecta con GitHub
+```bash
+   git remote add origin https://github.com/juanqui725System/SystemSexto2025.git
+```
+### 6.	Subir el codigo a GitHub
+```bash
+   git branch -M main
+   git push -u origin main
+```
 
-4.	Asegurar que la rama principal se llame main
-C:\wamp64\www\ProyectoSexto2025> git branch -M main
 
-5.	Conecta con GitHub
-PS C:\wamp64\www\ProyectoSexto2025> git remote add origin https://github.com/juanqui725System/SystemSexto2025.git
-
-6.	Subir el codigo a GitHub
-PS C:\wamp64\www\ProyectoSexto2025> git branch -M main
-PS C:\wamp64\www\ProyectoSexto2025> git push -u origin main
-branch 'main' set up to track 'origin/main'.
-Everything up-to-date
-
-7. Si existe conflicto para que compartan origen comun 
+### 7. Si existe conflicto para que compartan origen comun 
     git pull origin main --allow-unrelated-histories
 
 8. Forzar a la rama main
