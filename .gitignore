@@ -1,3 +1,10 @@
 .env
-/vendor/
-.vscode/
+# Dependencias de Node (Fundamentales)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivo de salida compilado (Opcional pero recomendado)
+# Es mejor que se genere localmente en cada computadora
+src/styles/output.css
