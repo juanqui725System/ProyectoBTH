@@ -22,3 +22,8 @@ PS C:\wamp64\www\ProyectoSexto2025> git branch -M main
 PS C:\wamp64\www\ProyectoSexto2025> git push -u origin main
 branch 'main' set up to track 'origin/main'.
 Everything up-to-date
+
+7. Si existe conflicto para que compartan origen comun 
+ git pull origin main --allow-unrelated-histories
+
+ 
