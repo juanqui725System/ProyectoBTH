@@ -1,58 +1,28 @@
 <?php
-// 1. Headers para API y CORS
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header('Access-Control-Allow-Origin: http://www.sexto2026.com');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-// Manejo de peticiones de comprobación (CORS)
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    exit;
-}
-
-// 2. Importar archivos (Si no usas Composer Autoload)
+if($_SERVER['REQUEST_METHOD']=='OPTIONS')
+    {
+        http_response_code(204);
+        exit;
+    }
 require_once "../src/Router.php";
 require_once "../src/Controllers/UserController.php";
-require_once __DIR__ . '/../src/Controllers/RolController.php';
-
-/**
- * Cuando quiero adicion el requiere puedo utilizar esto carga automatica
- */
-
-// spl_autoload_register(function ($class) {
-//     // Busca en Controllers
-//     $file = __DIR__ . '/../src/Controllers/' . $class . '.php';
-//     if (file_exists($file)) { require_once $file; }
-
-//     // Busca en Models
-//     $file = __DIR__ . '/../src/Models/' . $class . '.php';
-//     if (file_exists($file)) { require_once $file; }
-// });
-
-/**
- * Fin de carga automatica
- */
-
+require_once "../src/Controllers/ProductoController.php";
 
 use App\Router;
 
-// 3. Configurar Rutas
-$router = new Router();
+$route=new Router();
+//direccion para usuarios
+$route->add('GET','/','UserController@getAll');
+$route->add('GET','/users','UserController@getAll'); 
+//direccion de productos
+$route->add('GET','/productos','ProductoController@getAll'); 
+$route->add('PUT','/productos/{id}','ProductoController@actualizar'); 
+$route->add('POST','/productos','ProductoController@add'); 
 
-// Definimos los endpoints
-$router->add('GET', '/users', 'UserController@getAll');
-$router->add('GET', '/users/{id}', 'UserController@getById');
-$router->add('POST', '/users', 'UserController@store');
-$router->add('GET', '/rol', 'RolController@getAll');
 
-// 4. Iniciar la aplicación
-$router->run();
 
-//abrir el notepad como administrador
-//abrir el C:\Windows\System32\drivers\etc\host
-// adicionar 
-// 127.0.0.1 api.test
-//es para ejecutar el proyecto
-//php -S api.test:8000 -t public/
-//en el navegador tengo que colocar api.test:8000/users
-//esto me devuelve el usuario
+$route->run();
