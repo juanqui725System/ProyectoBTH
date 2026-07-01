@@ -1,5 +1,5 @@
 # backendSexto2026
-
+# inicializar La coneccion con el proyecto al git
 git init
 Paso para subir un proyecto existente en mi PC
 1.	Inicializar git
@@ -24,6 +24,12 @@ branch 'main' set up to track 'origin/main'.
 Everything up-to-date
 
 7. Si existe conflicto para que compartan origen comun 
- git pull origin main --allow-unrelated-histories
+    git pull origin main --allow-unrelated-histories
 
- 
+8. Forzar a la rama main
+    git branch -f main HEAD
+9. Subir los cambios a GitHub forzando la actualización 
+    git push -u origin main --force
+
+
+
