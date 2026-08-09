@@ -2,9 +2,10 @@ services:
   - type: web
     name: api-sexto
     runtime: docker
-    repo: https://github.com/TU_USUARIO/TU_REPOSITORIO
+    repo: https://github.com/juanqui725System/ProyectoBTH
     plan: free
     region: oregon
+    rootDir: api
     healthCheckPath: /
     envVars:
       - key: DB_HOST
