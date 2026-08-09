@@ -8,6 +8,8 @@ services:
     rootDir: api
     healthCheckPath: /
     envVars:
+      - key: PORT
+        value: "80"
       - key: DB_HOST
         value: mysql-201e59fb-juanqui725-b842.i.aivencloud.com
       - key: DB_NAME
