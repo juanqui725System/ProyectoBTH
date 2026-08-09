@@ -9,9 +9,12 @@ export async function initUserList() {
   const tbody = document.getElementById('userTableBody');
   tbody.innerHTML = '<tr><td colspan="5" class="px-4 py-4 text-center text-gray-500">Cargando...</td></tr>';
 
-  document.getElementById('btnNuevoUsuario').addEventListener('click', () => {
-    console.log('Abrir formulario para nuevo usuario');
-  });
+  const btnNuevo = document.getElementById('btnNuevoUsuario');
+  if (btnNuevo) {
+    btnNuevo.addEventListener('click', () => {
+      console.log('Abrir formulario para nuevo usuario');
+    });
+  }
 
   try {
     const users = await api.get('/users');

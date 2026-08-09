@@ -7,11 +7,11 @@ const app = document.getElementById('app');
 
 const views = {
   async inicio() {
-    const res = await fetch('./src/views/inicio.html');
+    const res = await fetch(`./src/views/inicio.html?t=${Date.now()}`);
     app.innerHTML = await res.text();
   },
   async users() {
-    const res = await fetch('./src/views/user-list.html');
+    const res = await fetch(`./src/views/user-list.html?t=${Date.now()}`);
     app.innerHTML = await res.text();
     await initUserList();
   }
