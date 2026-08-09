@@ -7,4 +7,4 @@ define("DATABASE", getenv('DB_NAME') ?: ($config['DB_NAME'] ?? ''));
 define("USERNAME", getenv('DB_USER') ?: ($config['DB_USER'] ?? ''));
 define("PASSWORD", getenv('DB_PASSWORD') ?: ($config['DB_PASSWORD'] ?? ''));
 define("PORT", getenv('DB_PORT') ?: ($config['DB_PORT'] ?? '15275'));
-define("CHARSET", getenv('DB_CHARSET') ?: ($config['DB_CHARSET'] ?? 'utf8mb4'));
+define("CHARSET", getenv('DB_CHARSET') ?: ($config['DB_CHARSET'] ?? 'charset=utf8mb4'));
