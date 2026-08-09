@@ -7,7 +7,6 @@ export const api = {
   async get(endpoint) {
     try {
       const response = await fetch(buildUrl(endpoint));
-      console.log(response)
       if (!response.ok) throw new Error('Error en la red');
       return await response.json();
     } catch (error) {

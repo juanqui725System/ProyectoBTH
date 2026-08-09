@@ -1,0 +1,28 @@
+<div class="rounded-lg bg-white p-6 shadow-md">
+  <div class="mb-4 flex items-center justify-between">
+    <h2 class="text-2xl font-bold">Listado de Usuarios</h2>
+    <button onclick="abrirFormUsuario()"
+      class="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500">
+      <iconify-icon icon="mdi:account-plus" width="20"></iconify-icon>
+      Nuevo Usuario
+    </button>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm">
+      <thead>
+        <tr class="border-b-2 border-gray-200 bg-gray-100 text-gray-600 uppercase">
+          <th class="px-4 py-3 font-semibold">ID</th>
+          <th class="px-4 py-3 font-semibold">Username</th>
+          <th class="px-4 py-3 font-semibold">Estado</th>
+          <th class="px-4 py-3 font-semibold">Código Empleado</th>
+          <th class="px-4 py-3 text-center font-semibold">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody">
+        <tr>
+          <td colspan="5" class="px-4 py-4 text-center text-gray-500">Cargando...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
