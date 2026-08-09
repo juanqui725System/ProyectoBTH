@@ -14,7 +14,7 @@ class ConexionPDO
         try {
             self::$cnn = new PDO($pdo, USERNAME, PASSWORD, $options);
         } catch (PDOException $error) {
-            die("ERROR " . $error->getMessage());
+            die("ERROR " . $error->getMessage() . " | DSN usado: " . $pdo . " | HOST=" . HOST . " PORT=" . PORT);
         }
         return self::$cnn;
     }
