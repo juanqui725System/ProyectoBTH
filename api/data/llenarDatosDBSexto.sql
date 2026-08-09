@@ -1,4 +1,4 @@
-USE dbventa;
+-- USE dbventa;
 -- CLIENTES
 INSERT INTO CLIENTES(ci,nombre,apellidos,direccion,telefono) VALUES
 ('123456','Ana','Pérez','Av. Libertad 123','70010001'),
@@ -26,7 +26,7 @@ INSERT INTO EMPLEADOS(ci,nombre,apellidos) VALUES
 ('101010','Patricia','Morales');
 
 -- USUARIOS (vinculados a empleados)
-INSERT INTO USUARIOS(username,password,estado,cod_empleado) VALUES
+INSERT INTO USUARIOS(username,password_hash,estado,cod_empleado) VALUES
 ('jramirez','hash1',true,1),
 ('asuarez','hash2',true,2),
 ('mortiz','hash3',true,3),

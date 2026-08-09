@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Gestión Escolar</title>
-    <base href="http://www.sexto2026.com/" />
     <link href="./src/styles/output.css" rel="stylesheet">
+    
   </head>
-  <body>
-    <nav>
-      <a href="#" data-view="inicio">Inicio</a>
-      <a href="#" data-view="users">Listar Usuarios</a>
+  <body class="min-h-screen bg-gray-100 font-sans text-gray-800">
+    <nav class="bg-gray-900 p-4">
+      <div class="mx-auto flex max-w-5xl items-center gap-6">
+        <span class="text-lg font-bold text-white">Gestión Escolar</span>
+        <a href="#" data-view="inicio"
+          class="rounded px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white">Inicio</a>
+        <a href="#" data-view="users"
+          class="rounded px-3 py-2 text-sm font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white">Listar
+          Usuarios</a>
+      </div>
     </nav>
-    <hr />
-    <div id="app"></div>
+    <main class="mx-auto max-w-5xl p-6">
+      <div id="app"></div>
+    </main>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
