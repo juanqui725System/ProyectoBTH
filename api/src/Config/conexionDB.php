@@ -14,8 +14,7 @@ class ConexionPDO
         try {
             self::$cnn = new PDO($pdo, USERNAME, PASSWORD, $options);
         } catch (PDOException $error) {
-            $envs = array_filter($_SERVER, fn($k) => str_starts_with($k, 'DB_'), ARRAY_FILTER_USE_KEY);
-            die("ERROR " . $error->getMessage() . " | DSN usado: " . $pdo . " | HOST=" . HOST . " PORT=" . PORT . " | ENV: " . json_encode($envs));
+            die("ERROR " . $error->getMessage());
         }
         return self::$cnn;
     }
