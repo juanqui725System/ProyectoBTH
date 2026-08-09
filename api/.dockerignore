@@ -1,0 +1,6 @@
+.env
+.git
+.gitignore
+Dockerfile
+render.yaml
+*.md

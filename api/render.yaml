@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: api-sexto
+    runtime: docker
+    repo: https://github.com/TU_USUARIO/TU_REPOSITORIO
+    plan: free
+    region: oregon
+    healthCheckPath: /
+    envVars:
+      - key: DB_HOST
+        value: mysql-201e59fb-juanqui725-b842.i.aivencloud.com
+      - key: DB_NAME
+        value: defaultdb
+      - key: DB_USER
+        value: avnadmin
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_PORT
+        value: "15275"
+      - key: DB_CHARSET
+        value: "charset=utf8"
