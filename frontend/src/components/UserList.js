@@ -10,10 +10,35 @@ export async function initUserList() {
   tbody.innerHTML = '<tr><td colspan="5" class="px-4 py-4 text-center text-gray-500">Cargando...</td></tr>';
 
   const btnNuevo = document.getElementById('btnNuevoUsuario');
-  if (btnNuevo) {
+  const modal = document.getElementById('modalUsuario');
+  if (btnNuevo && modal) {
     btnNuevo.addEventListener('click', () => {
-      console.log('Abrir formulario para nuevo usuario');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
     });
+  }
+
+  document.getElementById('btnCerrarModal')?.addEventListener('click', cerrarModal);
+  document.getElementById('btnCancelar')?.addEventListener('click', cerrarModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+
+  document.getElementById('formUsuario')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      username: document.getElementById('username').value,
+      password: document.getElementById('password').value,
+      cod_empleado: document.getElementById('codEmpleado').value,
+      estado: document.getElementById('estado').value
+    };
+    console.log('Guardar usuario:', data);
+    cerrarModal();
+  });
+
+  function cerrarModal() {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
   }
 
   try {

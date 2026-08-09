@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@tailwindcss/cli": "^4.3.2",
+    "iconify-icon": "^3.0.2",
     "tailwindcss": "^4.3.2"
   }
 }

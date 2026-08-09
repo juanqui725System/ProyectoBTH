@@ -1,3 +1,4 @@
+import 'iconify-icon';
 import { initUserList } from './components/UserList.js';
 // import { initAlumnoList } from './components/AlumnoList.js';
 // import { initMateriaList } from './components/MateriaList.js';
